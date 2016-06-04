@@ -1,5 +1,3 @@
-#include "kurs.h"
-//#include "del_1.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -7,40 +5,37 @@
 
 int main(int argc, char *argv[])
 {
-	int ds, k = 0, n = 0, f = 0, i = 0, j = 0;
-	char s[100000];
-	double e;
-    long d = 0;
-    ds = strlen(s); 
+    int d = 0;
 	
-	
-    while(d != 4){
-        printf("\n1. Ввод текста в консоли \n2. Чтение текста из файла \n3. Руководство пользователя \n4. Выход из программы\n");
-        scanf ("%ld", &d);
+    while(d != 3){
+        printf("\n1. Ввод текста в консоли \n2. Чтение текста из файла \n3. Выход из программы\n");
+        scanf ("%d", &d);
         
+        if (!(isdigit(d))) {	
         switch(d){
-            case 1:
-                printf("Введите текст: ");
-				do
-				{
-					scanf("%c", &s[i]); 
-					i++;
-				}
-				while(s[i-1] != 0xA);
-				s[i-1] = '\0';
-			//e = console(ds, k, n, f, i, j, *ms, *s, *c);
-			console(ds, &s);
 			
+            case 1: {
+			console1 ();
+            break; 
+			}
+			
+            case 2:  {
+			file1();	
             break;
-            case 2:
-            break;
-             case 3:
-            break;
-             case 4:
-            break;
-            default:
-               printf ( "\nОшибка! \n" );
-            break;
+			}
+			
+            case 3: break;
+            
+            default: {
+                printf ( "\nОшибка! \n" );
+				break;
+				return 1;
+			}
         }
     }
+    else {
+		 printf ( "\nОшибка! \n" );
+		 exit (1);
+	 }
+}
 }
