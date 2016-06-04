@@ -1,4 +1,4 @@
-sort: src/kurs.o src/main.o
+kurs: src/kurs.o src/main.o
 	gcc -o kurs  src/kurs.o src/main.o  -lm
 
 src/kurs.o: src/kurs.c
